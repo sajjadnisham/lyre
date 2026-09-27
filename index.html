@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lyre Hulhumalé</title>
+<meta name="description" content="Lyre Restaurant & Café on Beach Road, Hulhumalé. Beachfront burgers, Maldivian breakfast, kottu, 70+ drinks and private karaoke rooms 10 AM – 2 AM. Call 949-9969.">
+<meta property="og:title" content="Lyre Restaurant & Café · Beach Road, Hulhumalé">
+<meta property="og:description" content="Home of the 2 kg Bodugola. Maldivian mornings, beachfront plates and karaoke till 2 AM.">
+<meta property="og:image" content="assets/video/bodugola-signature-landscape-poster.jpg">
+<meta name="theme-color" content="#DD1638">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Titillium+Web:wght@400;600;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Lyre Restaurant & Café","alternateName":["Café Lyre","Lyre"],
+"address":{"@type":"PostalAddress","streetAddress":"Lot 11075, Beach Road","addressLocality":"Hulhumalé","addressRegion":"Malé","addressCountry":"MV"},
+"telephone":"+960 949 9969","servesCuisine":["Maldivian","International","Burgers","Asian"],"priceRange":"MVR 50–500",
+"sameAs":["https://www.facebook.com/CafeLyre/","https://www.instagram.com/lyre.mv/","https://linktr.ee/Lyre.mv"],
+"hasMenu":"#menu","amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Outdoor seating","value":true},{"@type":"LocationFeatureSpecification","name":"Private karaoke rooms","value":true}]}
+</script>
+<style>
+/* Lyre is a single committed brand look (red / cream); colours are painted explicitly for every section. */
+:root{
+  color-scheme:light;
+  --red:#DD1638;--red-deep:#B80F2E;--red-ink:#A80D2A;
+  --cream:#FBEFE0;--paper:#FFF8EF;--ink:#22161A;--muted:#6C5A5E;--line:#EBD6C6;
+  --wine:#5E1628;--violet:#7B2FD0;--carrot:#FF7A1A;--white:#fff;
+  --display:'Playfair Display',Georgia,'Times New Roman',serif;
+  --body:'Titillium Web',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --gut:clamp(16px,4vw,40px);
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;height:auto;display:block}
+[hidden]{display:none!important}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;line-height:.95;font-weight:900}
+p{margin:0}
+.wrap{max-width:1200px;margin-inline:auto;padding-inline:var(--gut)}
+.caps{text-transform:uppercase;letter-spacing:.1em;font-weight:700;font-size:12.5px}
+.num{font-variant-numeric:tabular-nums}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.on-red :focus-visible,.on-dark :focus-visible{outline-color:#fff}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* proposal ribbon + confirm tags */
+.proto{background:var(--ink);color:#e5d7da;font-size:12.5px;text-align:center;padding:6px var(--gut)}
+.proto b{color:#fff}
+.tbc{display:inline-block;border:1px dashed currentColor;border-radius:6px;padding:0 6px;font-family:var(--body);font-size:.72em;font-weight:600;letter-spacing:.02em;white-space:nowrap;opacity:.9;vertical-align:middle;line-height:1.5;text-transform:none}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 22px;border-radius:999px;font-family:var(--body);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s var(--ease),background .15s,color .15s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-red{background:var(--red-deep);color:#fff}
+.btn-red:hover{background:#9c0c26}
+.btn-cream{background:var(--paper);color:var(--red-deep)}
+.btn-line{border-color:currentColor;background:transparent}
+.btn-sm{min-height:38px;padding:0 16px;font-size:12px}
+.arrow{display:inline-block;transition:transform .2s var(--ease)}
+.btn:hover .arrow{transform:translateX(4px)}
+
+/* ---------- HERO ---------- */
+.hero{background:var(--red);color:var(--paper);position:relative;overflow:hidden;padding-top:84px}
+.navbar{position:fixed;left:0;right:0;top:calc(12px + env(safe-area-inset-top,0px));z-index:40;pointer-events:none;padding-inline:var(--gut)}
+.navbar .bar{pointer-events:auto;max-width:calc(1200px - 2 * var(--gut));margin-inline:auto;background:var(--paper);color:var(--ink);border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px;padding:0 10px 0 16px;box-shadow:0 2px 0 rgba(0,0,0,.04);transition:box-shadow .25s}
+.navbar.scrolled .bar{box-shadow:0 10px 30px rgba(94,22,40,.25)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo .mark{width:40px;height:40px;border-radius:50%;background:var(--red);display:grid;place-items:center}
+.logo .mark img{width:26px;height:auto}
+.logo b{font-family:var(--display);font-weight:900;font-size:20px;letter-spacing:.02em;color:var(--red-deep)}
+.navbar nav{display:flex;gap:26px}
+.navbar nav a{text-decoration:none;font-weight:700;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase}
+.navbar nav a:hover{color:var(--red-deep)}
+.nav-cta{display:flex;align-items:center;gap:8px}
+.burger{display:none;align-items:center;gap:8px;background:none;border:0;font-family:var(--body);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;color:var(--ink);padding:8px}
+.burger i{width:32px;height:32px;border:1.5px solid var(--ink);border-radius:50%;display:grid;place-items:center}
+.overlay{position:fixed;inset:0;z-index:60;background:var(--red);color:var(--paper);padding:calc(24px + env(safe-area-inset-top,0px)) var(--gut) 40px;display:flex;flex-direction:column;gap:10px;overflow:auto}
+.overlay .x{align-self:flex-end;background:none;border:0;color:#fff;font-size:34px;cursor:pointer;line-height:1}
+.overlay a.big{font-family:var(--display);font-weight:900;font-size:clamp(40px,12vw,64px);text-decoration:none;text-transform:uppercase;line-height:1.05}
+
+.doodles{position:absolute;inset:0;pointer-events:none;color:rgba(255,248,239,.5)}
+.doodles svg{position:absolute;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.hero-head{position:relative;text-align:center;padding-top:clamp(36px,6vw,64px);display:flex;flex-direction:column;align-items:center;gap:14px}
+.badge{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--paper);border-radius:999px;padding:4px 14px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.badge .dot{width:8px;height:8px;border-radius:50%;background:#8BF0B0;box-shadow:0 0 0 3px rgba(139,240,176,.25)}
+.badge .dot.off{background:#FFC3CD;box-shadow:none}
+.hero h1{font-size:clamp(56px,11.5vw,150px);text-transform:uppercase;letter-spacing:-.01em;line-height:.86}
+.hero h1 .row{display:block}
+.stage{position:relative;margin-top:clamp(10px,2vw,20px)}
+.stage-top{display:grid;grid-template-columns:1fr minmax(0,1.25fr) 1fr;align-items:end;position:relative;z-index:2}
+.side{background:var(--red);padding:0 0 clamp(14px,2vw,22px);display:flex;flex-direction:column;justify-content:flex-end;gap:10px;min-height:var(--notch)}
+.side.l{padding-right:clamp(12px,2vw,24px);align-items:flex-start}
+.side.r{padding-left:clamp(12px,2vw,24px);align-items:flex-end;text-align:right}
+.side .w{font-family:var(--display);font-weight:900;font-size:clamp(56px,11.5vw,150px);line-height:.86;text-transform:uppercase}
+.side .meta{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;width:100%}
+.side.r .meta{flex-direction:row-reverse}
+.side .meta::after{content:"";flex:1;height:1.5px;background:currentColor;opacity:.7;max-width:120px}
+.frame{position:relative;border-radius:4px;overflow:hidden;background:#1a0d10;margin-top:calc(-1 * var(--notch));aspect-ratio:16/9;z-index:1}
+.stage{--notch:clamp(90px,15vw,190px)}
+.frame video,.frame img.poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.chapbar{position:absolute;left:0;right:0;bottom:0;display:grid;grid-template-columns:auto 1fr auto;align-items:stretch;background:rgba(18,8,11,.82);color:#fff;backdrop-filter:blur(6px);min-height:64px;z-index:3}
+.chaps{display:flex;align-items:center;gap:0;padding:0 14px;border-right:1px solid rgba(255,255,255,.25)}
+.chaps button{background:none;border:0;color:rgba(255,255,255,.6);font-family:var(--body);font-weight:700;font-size:13px;padding:8px 10px;cursor:pointer;position:relative;min-height:44px}
+.chaps button+button::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:1px;background:rgba(255,255,255,.35)}
+.chaps button[aria-current="true"]{color:#fff}
+.chaps button[aria-current="true"]::after{content:"";position:absolute;left:10px;right:10px;bottom:6px;height:2px;background:var(--red)}
+.chaptitle{display:flex;align-items:center;justify-content:center;gap:14px;font-family:var(--display);font-weight:900;font-size:clamp(16px,2vw,24px);text-transform:uppercase;letter-spacing:.02em;padding:0 12px;text-align:center}
+.chaptitle small{font-family:var(--body);font-weight:600;font-size:12px;letter-spacing:.1em;opacity:.75}
+.chapcta{display:flex;align-items:center;gap:8px;padding:0 12px;border-left:1px solid rgba(255,255,255,.25)}
+.playbtn{background:none;border:1.5px solid rgba(255,255,255,.6);color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;display:grid;place-items:center;flex:none}
+.playbtn svg{width:14px;height:14px}
+.hero-foot{height:clamp(28px,4vw,48px)}
+@media (prefers-reduced-motion:no-preference){
+  .hero h1 .row,.side .w{animation:rise .9s var(--ease) both}
+  .hero h1 .row:nth-child(2){animation-delay:.08s}
+  .side.l .w{animation-delay:.16s}.side.r .w{animation-delay:.22s}
+  @keyframes rise{from{transform:translateY(28px);opacity:.001}to{transform:none;opacity:1}}
+}
+
+/* ---------- shared section ---------- */
+section{padding-block:clamp(64px,9vw,112px)}
+.pill{display:inline-flex;align-items:center;border:1.5px solid var(--red-deep);color:var(--red-deep);border-radius:999px;padding:3px 14px;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:transparent}
+.h2{font-size:clamp(40px,6.4vw,76px);text-transform:uppercase;color:var(--red-deep);letter-spacing:-.005em}
+.lede{color:var(--muted);max-width:52ch;font-size:17.5px}
+.waves{background-color:var(--cream);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 20c10 0 10-10 20-10s10 10 20 10 10-10 20-10 10 10 20 10M0 36c10 0 10-10 20-10s10 10 20 10 10-10 20-10 10 10 20 10' fill='none' stroke='%23E9D3BE' stroke-width='1.4'/%3E%3C/svg%3E")}
+
+/* corner-ornament frame: the lyre-string motif */
+.framed{position:relative;border:1.5px solid var(--red-deep);padding:clamp(28px,5vw,64px) clamp(18px,4vw,56px)}
+.framed::before{content:"";position:absolute;inset:7px;border:1px solid rgba(184,15,46,.35);pointer-events:none}
+.orn{position:absolute;width:22px;height:22px;color:var(--red-deep);background:var(--cream)}
+.orn.tl{left:-11px;top:-11px}.orn.tr{right:-11px;top:-11px}.orn.bl{left:-11px;bottom:-11px}.orn.br{right:-11px;bottom:-11px}
+
+/* ---------- SOUL / intro ---------- */
+.soul{padding-top:clamp(80px,10vw,130px);overflow:hidden}
+.soul .framed{text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px;padding-top:clamp(60px,8vw,96px)}
+.soul .h2{font-size:clamp(44px,7.4vw,92px)}
+.plate{position:absolute;border-radius:50%;box-shadow:0 18px 40px rgba(94,22,40,.28);object-fit:cover;aspect-ratio:1;z-index:2}
+.plate.a{width:clamp(110px,15vw,190px);left:clamp(-40px,-3vw,-10px);top:18%;transform:rotate(-12deg)}
+.plate.b{width:clamp(120px,17vw,220px);right:clamp(-40px,-3vw,-10px);top:8%;transform:rotate(10deg)}
+.soul-pics{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,24px);width:100%;margin-top:18px;text-align:left}
+.soul-pics figure{margin:0;display:flex;flex-direction:column;gap:8px}
+.soul-pics img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 70%;border-radius:4px}
+.soul-pics figcaption{font-size:13px;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+.soul-pics figcaption b{color:var(--ink);font-weight:700}
+@media (prefers-reduced-motion:no-preference){.plate{transition:transform .6s var(--ease)}.soul:hover .plate.a{transform:rotate(-4deg)}.soul:hover .plate.b{transform:rotate(3deg)}}
+
+/* ---------- SIGNATURE BOARD ---------- */
+.sig{background:var(--paper)}
+.sig .title{text-align:center;margin-bottom:clamp(32px,5vw,56px)}
+.sig .framed{background:transparent}
+.sig .orn{background:var(--paper)}
+.board{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:stretch}
+.board-head{grid-column:1/-1;display:flex;justify-content:center;margin-bottom:6px}
+.dish-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.dish{border-bottom:1px solid var(--line)}
+.dish button{all:unset;box-sizing:border-box;display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:16px 4px;width:100%;cursor:pointer}
+.dish button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.dish h3{font-size:clamp(20px,2.2vw,26px);text-transform:uppercase;color:var(--red-deep);line-height:1.1}
+.dish p{grid-column:1;color:var(--muted);font-size:14.5px;line-height:1.4;max-width:42ch}
+.dish .pr{grid-column:1;font-weight:700;color:var(--ink);font-size:17px;margin-top:4px}
+.dish .go{grid-row:1/4;grid-column:2;align-self:center;color:var(--red-deep);font-size:22px;opacity:0;transform:translateX(-6px);transition:.2s var(--ease)}
+.dish.on .go,.dish button:hover .go{opacity:1;transform:none}
+.dish.on h3::after{content:"";display:block;width:36px;height:2px;background:var(--red-deep);margin-top:6px}
+.showcase{position:relative;border-radius:4px;overflow:hidden;background:#1a0d10;min-height:420px}
+.showcase img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .35s var(--ease)}
+.showcase .inset{position:absolute;right:8%;bottom:22%;width:42%;aspect-ratio:1;object-fit:cover;border:4px solid var(--paper);border-radius:4px;box-shadow:0 18px 40px rgba(0,0,0,.35);inset:auto 8% 22% auto;height:auto}
+.showcase .cap{position:absolute;left:18px;right:18px;bottom:16px;font-family:var(--display);font-weight:900;font-size:clamp(28px,4vw,48px);line-height:.95;text-transform:uppercase;color:var(--paper);text-shadow:0 2px 20px rgba(0,0,0,.5)}
+.showcase .cap small{display:block;font-family:var(--body);font-size:12px;letter-spacing:.12em;font-weight:700;margin-bottom:6px;color:#FFD4DB}
+.board-foot{grid-column:1/-1;display:flex;justify-content:center;margin-top:18px}
+
+/* ---------- REVIEWS ---------- */
+.reviews{position:relative;padding:0;overflow:hidden;background:#2a1216}
+.reviews .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8}
+.reviews .inner{position:relative;min-height:clamp(420px,52vw,560px);display:grid;place-items:center;padding:clamp(40px,6vw,72px) var(--gut)}
+.stamp{position:relative;width:min(560px,100%);padding:8px;background:var(--red);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,radial-gradient(circle closest-side,#000 96%,transparent) 0 0/16px 16px round;
+  mask:linear-gradient(#000 0 0) content-box,radial-gradient(circle closest-side,#000 96%,transparent) 0 0/16px 16px round}
+.stamp-in{color:var(--paper);padding:clamp(26px,5vw,44px) clamp(18px,4vw,40px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;border:1px solid rgba(255,248,239,.35)}
+.stamp-wrap{filter:drop-shadow(0 20px 40px rgba(0,0,0,.4));width:min(560px,100%)}
+.stamp .q{font-family:var(--display);font-weight:900;font-size:64px;line-height:.6;height:30px;color:#FFD84D}
+.stamp blockquote{margin:0;font-family:var(--display);font-style:italic;font-weight:700;font-size:clamp(24px,3.4vw,36px);line-height:1.2}
+.stamp .rule{width:70%;height:1px;background:rgba(255,248,239,.5)}
+.stamp cite{font-style:normal;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.stamp .note{font-size:12px;opacity:.85}
+.rv-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;display:grid;place-items:center;font-size:20px;font-weight:700}
+.rv-nav.prev{left:clamp(10px,3vw,40px);background:var(--paper);color:var(--ink)}
+.rv-nav.next{right:clamp(10px,3vw,40px);background:var(--red);color:#fff}
+
+/* ---------- DAY ---------- */
+.day-head{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(20px,4vw,56px);align-items:end;margin-bottom:clamp(28px,4vw,44px)}
+.bar-quote{display:flex;gap:18px;align-items:flex-start}
+.bar-quote::before{content:"";flex:none;width:4px;align-self:stretch;background:var(--red-deep);box-shadow:8px 0 0 var(--red-deep)}
+.day-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,20px)}
+.day{display:flex;flex-direction:column;gap:12px}
+.day img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}
+.day .time{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red-deep)}
+.day h3{font-size:30px;text-transform:uppercase}
+.day p{color:var(--muted);font-size:15.5px}
+
+/* ---------- KARAOKE ---------- */
+.karaoke{background:linear-gradient(135deg,var(--violet) 0%,var(--wine) 100%);color:#fff;position:relative;overflow:hidden}
+.karaoke::before{content:"";position:absolute;left:-10%;right:-10%;bottom:-2px;height:45%;background:linear-gradient(rgba(255,255,255,.14) 1px,transparent 1px) 0 0/100% 34px,linear-gradient(90deg,rgba(255,255,255,.14) 1px,transparent 1px) 0 0/60px 100%;transform:perspective(420px) rotateX(58deg);transform-origin:bottom;pointer-events:none}
+.karaoke .wrap{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.karaoke h2{font-size:clamp(56px,9vw,124px);text-transform:uppercase;line-height:.88;text-shadow:0 0 28px rgba(255,160,255,.45)}
+@media (prefers-reduced-motion:no-preference){.karaoke h2{animation:flick 6s infinite}@keyframes flick{0%,92%,100%{opacity:1}93%{opacity:.55}94%{opacity:1}96%{opacity:.7}97%{opacity:1}}}
+.karaoke .copy{display:flex;flex-direction:column;gap:20px}
+.karaoke .copy p{font-size:19px;max-width:38ch}
+.k-card{background:rgba(20,6,30,.45);border:1px solid rgba(255,255,255,.22);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:14px;backdrop-filter:blur(4px)}
+.k-card dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;margin:0;font-size:15px}
+.k-card dt{color:#E6D2FF;font-weight:600}
+.k-card dd{margin:0}
+.k-card .big{font-family:var(--display);font-size:40px;font-weight:900;line-height:1}
+.steps{display:flex;flex-direction:column;gap:6px;padding:0;margin:0;list-style:none;counter-reset:s;font-size:15px}
+.steps li{counter-increment:s;display:flex;gap:10px}
+.steps li::before{content:counter(s);flex:none;width:24px;height:24px;border-radius:50%;background:#fff;color:var(--wine);font-weight:700;font-size:13px;display:grid;place-items:center}
+
+/* ---------- MENU ---------- */
+.menu-sec{background:var(--paper)}
+.menu-top{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:12px}
+.tabs{position:sticky;top:calc(88px + env(safe-area-inset-top,0px));z-index:20;background:var(--paper);padding-block:12px;border-bottom:1px solid var(--line);margin-bottom:24px}
+.tabs .row{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.tabs .row::-webkit-scrollbar{display:none}
+.tab{flex:none;border:1.5px solid var(--line);background:var(--cream);border-radius:999px;padding:8px 16px;font-family:var(--body);font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);cursor:pointer;min-height:40px}
+.tab[aria-selected="true"]{background:var(--red-deep);border-color:var(--red-deep);color:#fff}
+.menu-note{color:var(--muted);font-size:14px;margin-bottom:18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.panel{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+.panel h3.sub{grid-column:1/-1;font-size:26px;margin:26px 0 6px;color:var(--wine);text-transform:uppercase}
+.panel h3.sub:first-child{margin-top:0}
+.row-item{display:grid;grid-template-columns:auto 1fr auto;gap:2px 14px;padding:14px 0;border-bottom:1px solid var(--line);align-items:start}
+.row-item .no{font-weight:700;color:var(--muted);font-size:13px;padding-top:4px;min-width:22px}
+.row-item .name{font-weight:700;font-size:18px;line-height:1.25}
+.row-item .desc{grid-column:2;color:var(--muted);font-size:14.5px;line-height:1.4}
+.row-item .icons{grid-column:2;display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.row-item .mvr{font-weight:700;font-size:18px;white-space:nowrap;color:var(--red-deep)}
+.row-item .mvr small{font-size:11px;color:var(--muted);margin-right:3px}
+.row-item.thumb{grid-template-columns:auto 60px 1fr auto}
+.row-item.thumb img{width:60px;height:60px;object-fit:cover;border-radius:50%;grid-row:span 3}
+.row-item.thumb .desc,.row-item.thumb .icons{grid-column:3}
+.tag{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--muted);background:var(--cream)}
+.tag.pick{border-color:var(--red-deep);color:var(--red-deep);background:var(--paper)}
+
+/* ---------- DRINKS ---------- */
+.drinks{background:var(--red);color:var(--paper)}
+.drinks .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center}
+.drinks h2{font-size:clamp(44px,7vw,88px);text-transform:uppercase;line-height:.9}
+.drinks .rule{height:1.5px;background:rgba(255,248,239,.45);margin-block:22px}
+.drinks ul{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.drinks li{border:1.5px solid rgba(255,248,239,.55);border-radius:999px;padding:4px 12px;font-size:14px;font-weight:600}
+.reel{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;align-items:end}
+.reel video,.reel img{width:100%;aspect-ratio:9/14;object-fit:cover;border-radius:180px 180px 4px 4px;background:#8d0f25}
+.reel img{aspect-ratio:3/4;border-radius:4px}
+.reel figure{margin:0;display:flex;flex-direction:column;gap:8px}
+.reel figcaption{font-size:12.5px;font-weight:600;letter-spacing:.06em}
+
+/* ---------- GALLERY ---------- */
+.gal-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.gal{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+.gal a{display:block;overflow:hidden;background:#1a0d10}
+.gal img{width:100%;aspect-ratio:1;object-fit:cover;transition:transform .5s var(--ease)}
+.gal a:hover img{transform:scale(1.05)}
+
+/* ---------- VISIT ---------- */
+.visit{background:var(--wine);color:var(--paper)}
+.visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,32px);align-items:stretch}
+.vcard{background:var(--paper);color:var(--ink);border-radius:4px;padding:clamp(22px,3.4vw,40px);display:flex;flex-direction:column;gap:20px}
+.vcard h2{font-size:clamp(36px,5vw,58px);text-transform:uppercase;color:var(--red-deep)}
+.vcard .addr{font-size:19px;line-height:1.4}
+.phone-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.phone{font-family:var(--display);font-weight:900;font-size:40px;line-height:1;user-select:all}
+.copybtn{background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-family:var(--body);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;color:var(--ink);min-height:36px}
+.hours{width:100%;border-collapse:collapse;font-size:15px}
+.hours th,.hours td{text-align:left;padding:9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.hours th{font-weight:600;color:var(--muted);width:42%}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap}
+.mapbox{border-radius:4px;overflow:hidden;position:relative;min-height:360px;background:#F6E4E7;display:flex;text-decoration:none}
+.mapbox svg{position:absolute;inset:0;width:100%;height:100%}
+.mapbox .pin{position:absolute;left:50%;top:44%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center;gap:4px}
+.mapbox .pin span{background:var(--red-deep);color:#fff;border-radius:999px;padding:6px 14px;font-weight:700;font-size:13px;white-space:nowrap;box-shadow:0 6px 18px rgba(94,22,40,.3)}
+.mapbox .pin i{width:14px;height:14px;background:var(--red-deep);border:3px solid #fff;border-radius:50%}
+.mapbox .open{position:absolute;right:14px;bottom:14px}
+.faq{display:flex;flex-direction:column}
+.faq details{border-bottom:1px solid var(--line);padding:12px 0}
+.faq summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:700;color:var(--red-deep)}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--muted);font-size:15px;margin-top:6px}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--red);color:var(--paper);padding-block:64px calc(40px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px}
+footer .flogo{width:76px;height:auto}
+footer .tagline{font-family:var(--display);font-style:italic;font-size:28px;font-weight:700;margin-top:14px}
+footer h4{margin:0 0 10px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#FFD4DB}
+footer a{text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,248,239,.3);padding-top:18px;font-size:13px;color:#FFE0E5;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- STICKY MOBILE BAR ---------- */
+.sbar{display:none}
+
+@media (max-width:1000px){
+  .navbar nav{display:none}
+  .burger{display:inline-flex}
+  .panel{grid-template-columns:1fr}
+  .gal{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:760px){
+  .nav-cta .btn{display:none}
+  .stage{--notch:0px}
+  .stage-top{grid-template-columns:1fr 1fr;align-items:end}
+  .stage-top .gap{display:none}
+  .side .w,.hero h1{font-size:clamp(40px,12.6vw,96px)}
+  .badge{font-size:10.5px;letter-spacing:.06em;white-space:nowrap}
+  .doodles svg:nth-child(n+3){display:none}
+  .frame{aspect-ratio:4/5;margin-top:0}
+  .chapbar{grid-template-columns:1fr auto;min-height:0}
+  .chaps{grid-column:1/-1;border-right:0;border-bottom:1px solid rgba(255,255,255,.2);justify-content:center}
+  .chaptitle{justify-content:flex-start;padding:10px 12px;flex-direction:column;align-items:flex-start;gap:2px;text-align:left}
+  .chapcta{border-left:0}
+  .chapcta .btn{padding:0 14px}
+  .board{grid-template-columns:1fr}
+  .showcase{min-height:0;aspect-ratio:4/5;order:-1}
+  .soul-pics{grid-template-columns:1fr}
+  .plate.a{top:-40px;left:-6px}
+  .plate.b{top:-56px;right:-6px}
+  .day-head,.karaoke .wrap,.drinks .wrap,.visit .wrap{grid-template-columns:1fr}
+  .day-grid{grid-template-columns:1fr}
+  .day img{aspect-ratio:16/10}
+  .rv-nav{top:auto;bottom:14px;transform:none}
+  footer .wrap{grid-template-columns:1fr}
+  .sbar{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--ink);color:#fff;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));box-shadow:0 -6px 20px rgba(0,0,0,.25)}
+  .sbar a{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:8px 2px;min-height:52px;border-radius:10px}
+  .sbar a:first-child{background:var(--red-deep)}
+  .sbar svg{width:22px;height:22px}
+  footer{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.3-1.8-1-1 .8a4 4 0 0 1-2.4-2.4l.8-1-1-1.8L9 9.5z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4l13 8-13 8z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="4" width="5" height="16"/><rect x="14" y="4" width="5" height="16"/></symbol>
+  <!-- corner ornament: a small lyre (the instrument the café is named after) -->
+  <symbol id="i-lyre" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="1" y="1" width="20" height="20"/><path d="M6 5c-1.4 1-1.4 3 0 4v4.5c0 2.8 2.2 4.5 5 4.5s5-1.7 5-4.5V9c1.4-1 1.4-3 0-4"/><path d="M9 8v8M11 7.5v9M13 8v8"/></symbol>
+</svg>
+
+
+<div class="navbar" id="navbar">
+    <div class="bar">
+      <a class="logo" href="#top" aria-label="Lyre home"><span class="mark"><img src="assets/img/logo-white.png" alt="" width="26" height="30"></span><b>LYRE</b></a>
+      <nav aria-label="Main">
+        <a href="#signatures">Signatures</a>
+        <a href="#menu">Menu</a>
+        <a href="#karaoke">Karaoke</a>
+        <a href="#visit">Visit</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-red btn-sm" href="#karaoke">Book a room</a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="overlay"><i><svg width="16" height="16"><use href="#i-menu"/></svg></i>Menu</button>
+      </div>
+    </div>
+  </div>
+
+<header class="hero on-red" id="top">
+  <div class="doodles" aria-hidden="true">
+    <!-- line doodles, after the reference's hand-drawn sketches: burger, juice glass, mic, palm -->
+    <svg style="left:2%;top:120px;width:clamp(90px,13vw,170px)" viewBox="0 0 120 100"><path d="M14 52c0-24 20-38 46-38s46 14 46 38z"/><path d="M34 30l3 2M52 24l2 3M70 26l2 2M86 34l2 2M44 40l2 2M76 42l2 2"/><path d="M8 60c10 6 18-4 26 2s16-4 26 2 16-4 26 2 14-4 26 0"/><rect x="12" y="68" width="96" height="10" rx="5"/><path d="M14 84h92c0 8-10 12-46 12s-46-4-46-12z"/></svg>
+    <svg style="right:3%;top:140px;width:clamp(70px,9vw,120px)" viewBox="0 0 80 120"><path d="M16 30h48l-6 58c-1 8-8 12-18 12s-17-4-18-12z"/><path d="M40 100v12M26 116h28"/><path d="M50 30l14-26"/><circle cx="60" cy="30" r="10"/><path d="M20 52c8 4 32 4 40 0"/></svg>
+    <svg style="left:6%;bottom:38%;width:clamp(40px,5vw,70px)" viewBox="0 0 40 70"><rect x="12" y="2" width="16" height="32" rx="8"/><path d="M4 26a16 16 0 0 0 32 0M20 42v24M12 66h16"/></svg>
+    <svg style="right:7%;bottom:40%;width:clamp(60px,8vw,110px)" viewBox="0 0 100 110"><path d="M52 108c-2-30 0-60 8-84"/><path d="M60 24c-14-10-34-10-50 2 16-2 30 2 38 8M60 24c4-14 18-22 34-20-12 4-22 12-26 22M60 24c12-4 28 2 36 16-12-6-24-8-34-4M60 24c-6 10-8 26-4 40"/></svg>
+  </div>
+
+  <div class="wrap">
+    <div class="hero-head">
+      <span class="badge" id="live"><span class="dot" id="liveDot"></span><span id="liveTxt">Karaoke 10 AM – 2 AM</span></span>
+      <h1 id="h1"><span class="row">Lyre is</span><span class="row">the place</span><span class="sr"> to be!</span></h1>
+    </div>
+
+    <div class="stage">
+      <div class="stage-top" aria-hidden="true">
+        <div class="side l"><span class="w">To</span><span class="meta">Beach Road</span></div>
+        <div class="gap"></div>
+        <div class="side r"><span class="w">Be!</span><span class="meta">Hulhumalé</span></div>
+      </div>
+      <div class="frame" id="frame">
+        <video id="heroVid" muted playsinline loop preload="metadata" poster="assets/video/bodugola-signature-landscape-poster.jpg" aria-label="Bodugola, Lyre's 2 kg signature burger with fries and salad">
+          <source src="assets/video/bodugola-signature-landscape.mp4" type="video/mp4">
+        </video>
+        <div class="chapbar">
+          <div class="chaps" id="chaps" aria-label="Video chapters">
+            <button type="button" data-t="0" aria-current="true">01</button>
+            <button type="button" data-t="3">02</button>
+            <button type="button" data-t="5.6">03</button>
+            <button type="button" data-t="9.6">04</button>
+          </div>
+          <div class="chaptitle"><span>Bodugola</span><small>The Giant Burger · 2 kg · MVR 500</small></div>
+          <div class="chapcta">
+            <button class="playbtn" id="playBtn" type="button" aria-label="Pause video"><svg><use href="#i-pause"/></svg></button>
+            <a class="btn btn-red btn-sm" href="https://wa.me/9609499969?text=Hi%20Lyre!%20I'd%20like%20to%20pre-order%20a%20Bodugola%20for%20__%20people%20on%20__%20at%20__." target="_blank" rel="noopener">Pre-order <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-foot"></div>
+  </div>
+</header>
+
+<div class="overlay on-red" id="overlay" hidden>
+  <button class="x" id="closeOv" aria-label="Close menu">×</button>
+  <a class="big" href="#signatures">Signatures</a>
+  <a class="big" href="#menu">Menu</a>
+  <a class="big" href="#karaoke">Karaoke</a>
+  <a class="big" href="#visit">Visit</a>
+  <div class="btn-row" style="margin-top:18px">
+    <a class="btn btn-cream" href="tel:+9609499969"><svg><use href="#i-phone"/></svg>Call 949-9969</a>
+    <a class="btn btn-line" href="https://wa.me/9609499969" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+  </div>
+</div>
+
+<main>
+<div class="proto">Website proposal for <b>Lyre Restaurant &amp; Café</b> · items marked <span class="tbc">confirm</span> need the owner's input before launch</div>
+<!-- intro: "the soul in every dish" slot of the reference -->
+<section class="soul waves" aria-labelledby="soul-h">
+  <div class="wrap">
+    <div class="framed">
+      <svg class="orn tl"><use href="#i-lyre"/></svg><svg class="orn tr"><use href="#i-lyre"/></svg><svg class="orn bl"><use href="#i-lyre"/></svg><svg class="orn br"><use href="#i-lyre"/></svg>
+      <img class="plate a" src="assets/img/nasi-goreng.webp" alt="" width="640" height="557" loading="lazy">
+      <img class="plate b" src="assets/img/mixed-grill.webp" alt="" width="640" height="402" loading="lazy">
+      <span class="pill">Café · Restaurant · Karaoke</span>
+      <h2 class="h2" id="soul-h">Maldivian mornings.<br>Beachfront nights.</h2>
+      <p class="lede">A beachfront café on Hulhumalé's Beach Road. Mashuni and roshi for breakfast, burgers and kottu all day, and private karaoke rooms until 2 AM.</p>
+      <div class="soul-pics">
+        <figure><img src="assets/img/valhomas-breakfast.webp" alt="Valhomas mashuni with roshi, omelette and sausage at Lyre, Hulhumalé" width="500" height="520" loading="lazy"><figcaption><b>Valhomas Mashuni</b><span class="num">MVR 80</span></figcaption></figure>
+        <figure><img src="assets/img/kuda-gola.webp" alt="Kuda Gola beef burger with fries and two dips at Lyre, Hulhumalé" width="497" height="830" loading="lazy"><figcaption><b>Kuda Gola burger</b><span class="num">MVR 125</span></figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- signature plates board -->
+<section class="sig" id="signatures" aria-labelledby="sig-h">
+  <div class="wrap">
+    <h2 class="h2 title" id="sig-h">Signature<br>plates</h2>
+    <div class="framed">
+      <svg class="orn tl"><use href="#i-lyre"/></svg><svg class="orn tr"><use href="#i-lyre"/></svg><svg class="orn bl"><use href="#i-lyre"/></svg><svg class="orn br"><use href="#i-lyre"/></svg>
+      <div class="board">
+        <div class="board-head"><span class="pill">Lyre picks</span></div>
+        <ul class="dish-list" id="dishes">
+          <li class="dish on" data-img="assets/img/bodugola-web.webp" data-inset="assets/img/kuda-gola.webp" data-cap="Bodugola" data-kicker="Pre-order only · serves the crew">
+            <button type="button"><h3>Bodugola</h3><p>a.k.a. The Giant Burger. A 2 kg beef burger with fries and salad. Pre-order only.</p><span class="pr num">MVR 500</span><span class="go" aria-hidden="true">→</span></button></li>
+          <li class="dish" data-img="assets/img/kuda-gola.webp" data-inset="assets/img/chicken-cheese-kottu.webp" data-cap="Kuda Gola" data-kicker="Our beef burger">
+            <button type="button"><h3>Kuda Gola</h3><p>Beef burger with salad, fries and hot sauce.</p><span class="pr num">MVR 125</span><span class="go" aria-hidden="true">→</span></button></li>
+          <li class="dish" data-img="assets/img/nasi-goreng.webp" data-inset="assets/img/honey-sesame-chicken.webp" data-cap="Lyre Special Nasi Goreng" data-kicker="The one with our name on it">
+            <button type="button"><h3>Lyre Special Nasi Goreng</h3><p>Fried rice with a fried egg, prawn, crackers and slaw.</p><span class="pr num">MVR 120</span><span class="go" aria-hidden="true">→</span></button></li>
+          <li class="dish" data-img="assets/img/chicken-cheese-kottu.webp" data-inset="assets/img/mixed-grill.webp" data-cap="Chicken Cheese Kottu" data-kicker="Kottu Gang">
+            <button type="button"><h3>Chicken Cheese Kottu</h3><p>Kottu and chicken under a blanket of cheese sauce.</p><span class="pr num">MVR 110</span><span class="go" aria-hidden="true">→</span></button></li>
+          <li class="dish" data-img="assets/img/mix-mashuni.webp" data-inset="assets/img/valhomas-breakfast.webp" data-cap="Mix Mashuni" data-kicker="The Sunrise menu">
+            <button type="button"><h3>Mix Mashuni</h3><p>Three types of mashuni with huni roshi or roshi.</p><span class="pr num">MVR 95</span><span class="go" aria-hidden="true">→</span></button></li>
+        </ul>
+        <div class="showcase" aria-live="polite">
+          <img id="showMain" src="assets/img/bodugola-web.webp" alt="Bodugola, the 2 kg beef burger with melted cheese and fries at Lyre" width="795" height="850" loading="lazy">
+          <img id="showInset" class="inset" src="assets/img/kuda-gola.webp" alt="" width="497" height="830" loading="lazy">
+          <div class="cap"><small id="showKick">Pre-order only · serves the crew</small><span id="showCap">Bodugola</span></div>
+        </div>
+        <div class="board-foot"><a class="btn btn-red" href="#menu">See the full menu <span class="arrow">→</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- reviews: stamp card, reference layout. Only real public review titles are quoted. -->
+<section class="reviews on-dark" aria-labelledby="rv-h">
+  <img class="bg" src="assets/img/beach-salad.webp" alt="" width="640" height="853" loading="lazy">
+  <div class="inner">
+    <h2 class="sr" id="rv-h">What guests say</h2>
+    <div class="stamp-wrap"><figure class="stamp" style="margin:0"><div class="stamp-in">
+      <div class="q" aria-hidden="true">“</div>
+      <blockquote id="rvText">Best burgers in town</blockquote>
+      <div class="rule"></div>
+      <figcaption><cite id="rvWho">Tripadvisor review title</cite></figcaption>
+      <span class="note"><span class="tbc">owner to pick &amp; approve reviews</span></span>
+    </div></figure></div>
+    <button class="rv-nav prev" id="rvPrev" type="button" aria-label="Previous review">←</button>
+    <button class="rv-nav next" id="rvNext" type="button" aria-label="Next review">→</button>
+  </div>
+</section>
+
+<!-- a day at Lyre -->
+<section aria-labelledby="day-h">
+  <div class="wrap">
+    <div class="day-head">
+      <h2 class="h2" id="day-h">Sunrise to<br>singalong</h2>
+      <div class="bar-quote"><p class="lede">Same seat by the beach, three different moods. Breakfast from <span class="tbc">opening time</span>, the full kitchen through the day, karaoke and shisha until 2 AM.</p></div>
+    </div>
+    <div class="day-grid">
+      <article class="day"><img src="assets/img/valhomas-breakfast.webp" alt="Maldivian breakfast plate with roshi and mashuni at Lyre" width="500" height="520" loading="lazy"><span class="time">Morning</span><h3>The Sunrise</h3><p>Mashuni, kulhimas and rihaakuru with warm roshi. Or French toast and pancakes.</p></article>
+      <article class="day"><img src="assets/img/honey-sesame-chicken.webp" alt="Honey sesame chicken with steamed rice at Lyre" width="625" height="910" loading="lazy"><span class="time">All day</span><h3>Eat &amp; sip</h3><p>Burgers, kottu, nasi goreng, pasta and grills, with 70+ shakes, juices, mocktails and coffees.</p></article>
+      <article class="day"><img src="assets/img/mixed-grill.webp" alt="Mixed grill of seafood, beef and chicken in black pepper sauce at Lyre" width="640" height="402" loading="lazy"><span class="time">Till 2 AM</span><h3>After dark</h3><p>Private karaoke rooms and the shisha lounge. Mixed Grill and Mix Kottu for the table.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="karaoke on-dark" id="karaoke" aria-labelledby="k-h">
+  <div class="wrap">
+    <div class="copy">
+      <div class="caps" style="color:#EBD9FF">New · Lyre Karaoke Rooms</div>
+      <h2 id="k-h">Grab<br>the mic.</h2>
+      <p>Private karaoke rooms for you and your crew, open 10 AM to 2 AM. Call or WhatsApp to book your slot.</p>
+      <div class="btn-row">
+        <a class="btn btn-cream" href="https://wa.me/9609499969?text=Hi%20Lyre!%20I'd%20like%20to%20book%20a%20karaoke%20room%20on%20__%20at%20__%20for%20__%20people." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Book on WhatsApp</a>
+        <a class="btn btn-line" href="tel:+9609499969"><svg><use href="#i-phone"/></svg>949-9969</a>
+      </div>
+    </div>
+    <div class="k-card">
+      <div><div class="caps" style="color:#E6D2FF">Open daily</div><div class="big num">10 AM – 2 AM</div></div>
+      <dl>
+        <dt>Rooms</dt><dd><span class="tbc">number &amp; capacity</span></dd>
+        <dt>Rate</dt><dd><span class="tbc">per hour / min. spend</span></dd>
+        <dt>Shisha</dt><dd>Available · <span class="tbc">flavours</span></dd>
+      </dl>
+      <ol class="steps">
+        <li>Pick a date, time and group size</li>
+        <li>Send it on WhatsApp or call 949-9969</li>
+        <li>Lyre confirms your room</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="menu-sec" id="menu" aria-labelledby="m-h">
+  <div class="wrap">
+    <div class="menu-top">
+      <div>
+        <span class="pill">The Lyre menu</span>
+        <h2 class="h2" id="m-h" style="margin-top:12px">The menu</h2>
+      </div>
+      <p class="lede">40 plates across five chapters, plus 70+ drinks. Prices in Maldivian Rufiyaa.</p>
+    </div>
+    <div class="tabs"><div class="row" role="tablist" aria-label="Menu sections" id="tabs"></div></div>
+    <div class="menu-note"><span>Prices in MVR, subject to 8% GST &amp; 10% service charge.</span><span class="tag pick">Lyre pick</span><span>as marked on the printed menu</span><span class="tbc">confirm menu is current</span></div>
+    <div id="panel" class="panel" role="tabpanel" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="drinks on-red" aria-labelledby="d-h">
+  <div class="wrap">
+    <div>
+      <h2 id="d-h">Vibrant layers, bold taste.</h2>
+      <div class="rule"></div>
+      <p style="font-size:19px;max-width:36ch">Thick shakes, fresh juices and house mocktails. Seventy-plus ways to cool down on Beach Road.</p>
+      <ul><li>Fresh Carrot 59</li><li>Mango Mania 89</li><li>Passionfruit &amp; Turmeric 69</li><li>Oreo Milkshake 89</li><li>Kanbulo 89</li><li>Watermelon Breeze 79</li><li>Teh Trik 33</li></ul>
+    </div>
+    <div class="reel">
+      <figure>
+        <video id="reelVid" muted playsinline loop preload="none" poster="assets/video/carrot-juice-reel-poster.jpg" aria-label="Fresh carrot juice with a carrot slice and parsley on a wooden tray, from Lyre's own reel">
+          <source src="assets/video/carrot-juice-reel.mp4" type="video/mp4">
+        </video>
+        <figcaption>Fresh Chilled Carrot · MVR 59</figcaption>
+      </figure>
+      <figure><img src="assets/img/spaghetti-broccoli.webp" alt="Spaghetti and broccoli in cream sauce with garlic bread at Lyre" width="640" height="800" loading="lazy"><figcaption>Creamy Spaghetti · MVR 105</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="g-h" style="padding-bottom:0">
+  <div class="wrap gal-head">
+    <div>
+      <span class="pill">@lyre.mv</span>
+      <h2 class="h2" id="g-h" style="margin-top:12px">On the feed</h2>
+    </div>
+    <a class="btn btn-red" href="https://www.instagram.com/lyre.mv/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Follow @lyre.mv</a>
+  </div>
+  <div class="gal">
+    <a href="https://www.instagram.com/lyre.mv/" target="_blank" rel="noopener"><img src="assets/img/beach-salad.webp" alt="Salad bowl on the beach, Lyre" width="640" height="853" loading="lazy"></a>
+    <a href="https://www.instagram.com/lyre.mv/" target="_blank" rel="noopener"><img src="assets/img/pizza-campaign.webp" alt="Hands passing a cheesy pizza slice through torn paper, Lyre campaign" width="640" height="604" loading="lazy"></a>
+    <a href="https://www.instagram.com/lyre.mv/" target="_blank" rel="noopener"><img src="assets/img/french-toast.webp" alt="French toast with egg and sausage at Lyre" width="640" height="426" loading="lazy"></a>
+    <a href="https://www.instagram.com/lyre.mv/" target="_blank" rel="noopener"><img src="assets/img/carrot-juice-tray.webp" alt="Carrot juice on a wooden tray against red, Lyre" width="520" height="650" loading="lazy"></a>
+    <a href="https://www.instagram.com/lyre.mv/" target="_blank" rel="noopener"><img src="assets/img/honey-sesame-chicken.webp" alt="Honey sesame chicken at Lyre" width="625" height="910" loading="lazy"></a>
+    <a href="https://www.instagram.com/lyre.mv/" target="_blank" rel="noopener"><img src="assets/img/spaghetti-broccoli.webp" alt="Spaghetti with broccoli at Lyre" width="640" height="800" loading="lazy"></a>
+  </div>
+</section>
+
+<section class="visit on-dark" id="visit" aria-labelledby="v-h">
+  <div class="wrap">
+    <div class="vcard">
+      <div>
+        <span class="pill">Visit</span>
+        <h2 id="v-h" style="margin-top:12px">Find us on<br>Beach Road</h2>
+      </div>
+      <p class="addr">Lot 11075, Beach Road<br>Hulhumalé, Maldives</p>
+      <div class="phone-row">
+        <span class="phone num" id="ph">949-9969</span>
+        <button class="copybtn" id="copyPh" type="button">Copy number</button>
+      </div>
+      <table class="hours">
+        <tr><th scope="row">Café &amp; kitchen</th><td><span class="tbc">confirm daily hours</span></td></tr>
+        <tr><th scope="row">Karaoke rooms</th><td>10 AM – 2 AM</td></tr>
+        <tr><th scope="row">Seating</th><td>Outdoor · Dine-in</td></tr>
+        <tr><th scope="row">Payment</th><td><span class="tbc">cash / card / transfer</span></td></tr>
+      </table>
+      <div class="btn-row">
+        <a class="btn btn-red" href="https://www.google.com/maps/search/?api=1&amp;query=Lyre+Cafe+Beach+Road+Hulhumale" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Get directions</a>
+        <a class="btn btn-line" style="color:var(--red-deep)" href="https://wa.me/9609499969" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+      </div>
+      <div class="faq">
+        <details><summary>Are prices inclusive of tax?</summary><p>No. Menu prices are subject to 8% GST and 10% service charge.</p></details>
+        <details><summary>How do I get the Bodugola?</summary><p>It's pre-order only. Call or WhatsApp 949-9969. Notice time: <span class="tbc">confirm</span></p></details>
+        <details><summary>Can I book a table?</summary><p><span class="tbc">requires restaurant confirmation</span></p></details>
+        <details><summary>Do you deliver?</summary><p><span class="tbc">requires restaurant confirmation</span></p></details>
+      </div>
+    </div>
+    <a class="mapbox" href="https://www.google.com/maps/search/?api=1&amp;query=Lyre+Cafe+Beach+Road+Hulhumale" target="_blank" rel="noopener" aria-label="Open Lyre on Google Maps">
+      <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="400" height="400" fill="#F6E4E7"/>
+        <path d="M285 0 C300 120 310 260 330 400 L400 400 L400 0Z" fill="#CFE3EE"/>
+        <path d="M268 0 C283 120 293 260 313 400" stroke="#F1D9A8" stroke-width="16" fill="none"/>
+        <path d="M250 0 C265 120 275 260 295 400" stroke="#fff" stroke-width="10" fill="none"/>
+        <g stroke="#fff" stroke-width="6"><path d="M0 90 L262 70"/><path d="M0 200 L272 190"/><path d="M0 310 L285 305"/><path d="M90 0 L100 400"/><path d="M180 0 L190 400"/></g>
+        <g fill="#EBCDD2"><rect x="20" y="110" width="60" height="70" rx="4"/><rect x="110" y="105" width="60" height="75" rx="4"/><rect x="200" y="100" width="45" height="80" rx="4"/><rect x="20" y="215" width="60" height="80" rx="4"/><rect x="110" y="215" width="60" height="80" rx="4"/><rect x="200" y="210" width="50" height="85" rx="4"/></g>
+        <text x="352" y="210" fill="#6f98b0" font-family="Titillium Web, sans-serif" font-size="13" font-weight="700" transform="rotate(84 352 210)" letter-spacing="3">BEACH</text>
+        <text x="250" y="330" fill="#9b7f86" font-family="Titillium Web, sans-serif" font-size="11" font-weight="700" transform="rotate(82 250 330)" letter-spacing="2">BEACH ROAD</text>
+      </svg>
+      <div class="pin"><span>Lyre · Lot 11075</span><i></i></div>
+      <span class="btn btn-cream btn-sm open">Open in Maps</span>
+    </a>
+  </div>
+</section>
+</main>
+
+<footer class="on-red">
+  <div class="wrap">
+    <div>
+      <img class="flogo" src="assets/img/logo-white.png" alt="Lyre" width="76" height="87" loading="lazy">
+      <p class="tagline">is the place to be!</p>
+    </div>
+    <div>
+      <h4>Visit</h4>
+      <ul><li>Lot 11075, Beach Road</li><li>Hulhumalé, Maldives</li><li>Hotline 949-9969</li><li>Karaoke 10 AM – 2 AM</li></ul>
+    </div>
+    <div>
+      <h4>Follow</h4>
+      <ul>
+        <li><a href="https://www.instagram.com/lyre.mv/" target="_blank" rel="noopener">Instagram @lyre.mv</a></li>
+        <li><a href="https://www.facebook.com/CafeLyre/" target="_blank" rel="noopener">Facebook · Lyre</a></li>
+        <li><a href="https://linktr.ee/Lyre.mv" target="_blank" rel="noopener">Linktree · menu &amp; karaoke</a></li>
+        <li>TikTok <span class="tbc">handle</span></li>
+      </ul>
+    </div>
+    <div class="legal"><span>© Lyre Restaurant &amp; Café, Hulhumalé</span><span>Website proposal by Nisham Sajjad · not yet the official site</span></div>
+  </div>
+</footer>
+
+<nav class="sbar" aria-label="Quick actions">
+  <a href="tel:+9609499969"><svg><use href="#i-phone"/></svg>Call</a>
+  <a href="https://wa.me/9609499969" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+  <a href="#menu"><svg><use href="#i-menu"/></svg>Menu</a>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=Lyre+Cafe+Beach+Road+Hulhumale" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Directions</a>
+</nav>
+
+<script>
+const IMG={nasi:"assets/img/nasi-goreng.webp",kudagola:"assets/img/kuda-gola.webp",mashuni:"assets/img/mix-mashuni.webp",bodugola:"assets/img/bodugola-web.webp",kottu:"assets/img/chicken-cheese-kottu.webp",honey:"assets/img/honey-sesame-chicken.webp",toast:"assets/img/french-toast.webp",grill:"assets/img/mixed-grill.webp",breakfast:"assets/img/valhomas-breakfast.webp",spag:"assets/img/spaghetti-broccoli.webp",carrot:"assets/img/carrot-juice.webp"};
+// [no, name, desc, price, proteins, pick, img]
+const MENU=[
+ {id:"sunrise",label:"The Sunrise",groups:[{items:[
+  ["01","French Toast","With egg of your choice and sausage",95,"",0,"toast"],
+  ["02","Pancakes","With a choice of egg & sausage",95,"",1],
+  ["03","Mix Mashuni","Three types of mashuni with huni roshi or roshi",95,"",0,"mashuni"],
+  ["04","Kulhimas","Served with huni roshi or roshi",80,"",0,"breakfast"],
+  ["05","Rihaakuru","Served with huni roshi or roshi",80],
+  ["06","Mashuni","Served with huni roshi or roshi",75],
+  ["07","Valhomas Mashuni","Served with huni roshi or roshi",80],
+  ["08","Fathu Mashuni","Served with huni roshi or roshi",80],
+  ["09","Baraboa (Pumpkin) Mashuni","Served with huni roshi or roshi",80]]}]},
+ {id:"this",label:"This & That",groups:[{items:[
+  ["10","Lyre Special Nasi Goreng","",120,"",0,"nasi"],
+  ["11","Meatball Spaghetti","",125,"beef"],
+  ["12","Bamigoreng","",120],
+  ["13","Spaghetti Alfredo","Seafood",135,"seafood"],
+  ["14","Meatball and Mash","",120,"beef"],
+  ["15","Tuna Steak","With sautéed vegetables",125,"fish"],
+  ["16","Creamy Spaghetti","Chicken",105,"chicken",0,"spag"],
+  ["17","Baked Spicy Rice","Greens, chicken / beef",120,"chicken beef",1],
+  ["18","Honey Sesame Chicken","With steamed rice",105,"chicken",1,"honey"],
+  ["19","Kuda Gola","Beef burger with salad, fries & hot sauce",125,"beef",1,"kudagola"],
+  ["20","The Rooster","Chicken burger with salad, fries & hot sauce",115,"chicken",1],
+  ["21","Bodugola a.k.a. The Giant Burger","2 kg beef burger with fries & salad · Pre-order",500,"beef",1,"bodugola"],
+  ["22","Madam Sandwich","Chicken / beef / tuna",90,"chicken beef fish",1],
+  ["23","Chicken Chop","",115,"chicken"],
+  ["24","Chicken Sub","",90,"chicken"],
+  ["25","Beef Sub","",110,"beef"],
+  ["26","Sandwich Chicken / Beef","With salad, fries & hot sauce",90,"chicken beef"],
+  ["27","Mixed Grill","Seafood, beef, chicken in black pepper sauce & garlic bread",220,"chicken beef fish seafood",1,"grill"],
+  ["28","Broccoli & Beef Stir Fry","With steamed rice",125,"beef"]]}]},
+ {id:"kottu",label:"Kottu Gang",groups:[{items:[
+  ["29","Chicken Cheese Kottu","",110,"chicken",1,"kottu"],
+  ["30","Chicken Kottu","",100,"chicken"],
+  ["31","Beef Kottu","",110,"beef"],
+  ["32","Mix Kottu","",115,"chicken beef fish seafood"]]}]},
+ {id:"small",label:"Small & Light",groups:[{items:[
+  ["33","Green Salad","Chicken on request",100],
+  ["34","Beef & Fries","",95,"beef"],
+  ["35","Cheese & Fries","",95],
+  ["36","Caesar Salad","Romaine lettuce & croutons, parmesan & Caesar dressing",120,"",1],
+  ["37","Onion Rings","",50]]}]},
+ {id:"last",label:"The Last Meal",groups:[{items:[
+  ["38","Nutella Sandwich","",100,"",1],
+  ["39","Fresh Fruits","Seasonal fruits",100],
+  ["40","Ice Cream Scoop","Chocolate, vanilla, strawberry",60]]}]},
+ {id:"drinks",label:"Drinks",groups:[
+  {title:"Thick Shakers",items:[["","Strawberry / Chocolate / Vanilla Milkshake","",79],["","Banana / Mango Milkshake","",79],["","Oreo Milkshake","",89],["","Ice Milo","",89],["","Ice Coffee","",89],["","Mixed Berry Blast","Berries, curd, milk",89],["","Oatmeal with Papaya","Papaya, curd, milk, whip cream",69],["","Single / Double Creamy Espresso","","33 / 67"]]},
+  {title:"Mocktails",items:[["","Mint & Lime","Lemongrass, tea, mint, lime, soda",69],["","Passionfruit & Turmeric","Fresh passionfruit & lime, turmeric paste, passionfruit syrup, soda",69],["","Mango Mania","Fresh mango, lime, cinnamon, mango syrup, lime syrup, soda",89],["","Strawberry Margarita","Fresh strawberries, lime, strawberry syrup",69],["","Lady Blue","",79],["","Watermelon Breeze","",79],["","Pomegranate Bull","",79],["","Redbull Rooster","",89],["","Kanbulo","",89],["","Aloha","",79],["","Blueberry Mojito","",59],["","Ginger Lemonade","",69]]},
+  {title:"Fresh Chilled",items:[["","Orange & Pineapple","",69],["","Watermelon & Orange","",59],["","Passionfruit & Pineapple","",69],["","Beetroot","",69],["","Orange","",59],["","Watermelon","",59],["","Pineapple","",59],["","Passionfruit","",69],["","Lime","",39],["","Carrot","",59,"",0,"carrot"],["","Mixed Fruit","",79]]},
+  {title:"Hot Stuff",items:[["","Espresso","",39],["","Americano","",49],["","Cappuccino","",59],["","Café Mocha","",69],["","Hot Chocolate","",69],["","Hazelnut Latte","",69],["","Milk Tea","",29],["","Hot Milo","",74],["","Assorted Tea","Mixed fruit, English breakfast, strawberry, green, Earl Grey, lemon",19],["","Teh Trik","",33]]},
+  {title:"Others & Carbonated",items:[["","Soda Gembira","",45],["","Ice Lemon Tea","",45],["","Granini","",31],["","Iced Milk","",34],["","Water small / big","","10 / 15"],["","Nuts","",14],["","Coke, Zero Coke, Sprite, Soda","",19],["","Bitter Lemon","",22],["","Red Bull","",59],["","Beer 0%","",59]]}]},
+ {id:"shisha",label:"Shisha",groups:[{items:[["","Shisha","Flavours & prices to be confirmed by Lyre","—"]]}]}
+];
+const tabsEl=document.getElementById('tabs'),panel=document.getElementById('panel');
+const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+function render(id){
+  const sec=MENU.find(m=>m.id===id);
+  [...tabsEl.children].forEach(b=>b.setAttribute('aria-selected',b.dataset.id===id));
+  panel.setAttribute('aria-labelledby','tab-'+id);
+  panel.innerHTML=sec.groups.map(g=>(g.title?`<h3 class="sub">${g.title}</h3>`:'')+g.items.map(([no,n,d,p,pr,pick,img])=>{
+    const tags=(pr?pr.split(' ').map(x=>`<span class="tag">${cap(x)}</span>`).join(''):'')+(pick?'<span class="tag pick">Lyre pick</span>':'');
+    return `<div class="row-item${img?' thumb':''}"><span class="no num">${no}</span>${img?`<img src="${IMG[img]}" alt="" width="60" height="60" loading="lazy">`:''}<span class="name">${n}</span><span class="mvr num"><small>MVR</small>${p}</span>${d?`<span class="desc">${d}</span>`:''}${tags?`<span class="icons">${tags}</span>`:''}</div>`}).join('')).join('');
+}
+MENU.forEach(m=>{const b=document.createElement('button');b.className='tab';b.type='button';b.setAttribute('role','tab');b.id='tab-'+m.id;b.dataset.id=m.id;b.textContent=m.label;b.onclick=()=>{render(m.id);try{localStorage.setItem('lyreTab',m.id)}catch(e){}};tabsEl.appendChild(b)});
+let start='sunrise';try{const s=localStorage.getItem('lyreTab');if(s&&MENU.some(m=>m.id===s))start=s}catch(e){}
+render(start);
+tabsEl.addEventListener('keydown',e=>{if(!['ArrowRight','ArrowLeft'].includes(e.key))return;const bs=[...tabsEl.children];let i=bs.indexOf(document.activeElement);i=(i+(e.key==='ArrowRight'?1:-1)+bs.length)%bs.length;bs[i].focus();bs[i].click()});
+
+// hero video: pick the 4:5 cut on phones, chapter bar, pause control, reduced motion
+(function(){
+  const v=document.getElementById('heroVid'),btn=document.getElementById('playBtn'),chaps=[...document.querySelectorAll('#chaps button')];
+  const small=matchMedia('(max-width:760px)').matches;
+  if(small){v.poster='assets/video/bodugola-signature-portrait-poster.jpg';v.querySelector('source').src='assets/video/bodugola-signature-portrait.mp4';v.load();}
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const setBtn=()=>{const p=v.paused;btn.innerHTML=`<svg><use href="#i-${p?'play':'pause'}"/></svg>`;btn.setAttribute('aria-label',p?'Play video':'Pause video')};
+  if(!reduce){v.play().catch(()=>{});}
+  v.addEventListener('play',setBtn);v.addEventListener('pause',setBtn);setBtn();
+  btn.onclick=()=>v.paused?v.play().catch(()=>{}):v.pause();
+  const marks=chaps.map(b=>+b.dataset.t);
+  v.addEventListener('timeupdate',()=>{let k=0;marks.forEach((t,i)=>{if(v.currentTime>=t-.05)k=i});chaps.forEach((b,i)=>b.setAttribute('aria-current',i===k))});
+  chaps.forEach(b=>b.onclick=()=>{v.currentTime=+b.dataset.t+.01;v.play().catch(()=>{})});
+  // drinks reel plays only while on screen
+  const r=document.getElementById('reelVid');
+  if(!reduce&&'IntersectionObserver' in window){new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?r.play().catch(()=>{}):r.pause()),{threshold:.3}).observe(r);}
+})();
+
+// signature board: hover / focus / tap swaps the showcase
+(function(){
+  const items=[...document.querySelectorAll('#dishes .dish')],m=document.getElementById('showMain'),ins=document.getElementById('showInset'),c=document.getElementById('showCap'),k=document.getElementById('showKick');
+  function pick(li){items.forEach(x=>x.classList.toggle('on',x===li));m.style.opacity=0;setTimeout(()=>{m.src=li.dataset.img;m.alt=li.dataset.cap+' at Lyre, Hulhumalé';ins.src=li.dataset.inset;c.textContent=li.dataset.cap;k.textContent=li.dataset.kicker;m.style.opacity=1},160)}
+  items.forEach(li=>{const b=li.querySelector('button');b.addEventListener('mouseenter',()=>pick(li));b.addEventListener('focus',()=>pick(li));b.addEventListener('click',()=>pick(li))});
+})();
+
+// reviews: only real public review titles; owner to add Google reviews with permission
+(function(){
+  const R=[["Best burgers in town","Tripadvisor review title"],["This is where u can watch sunrise","Tripadvisor review title"]];
+  let i=0;const t=document.getElementById('rvText'),w=document.getElementById('rvWho');
+  const show=()=>{t.textContent=R[i][0];w.textContent=R[i][1]};
+  document.getElementById('rvPrev').onclick=()=>{i=(i-1+R.length)%R.length;show()};
+  document.getElementById('rvNext').onclick=()=>{i=(i+1)%R.length;show()};
+})();
+
+// karaoke status in Maldives time (UTC+5); rooms 10:00–02:00
+(function(){const now=new Date(Date.now()+(new Date().getTimezoneOffset()+300)*60000);const h=now.getHours();const open=h>=10||h<2;
+ document.getElementById('liveDot').classList.toggle('off',!open);
+ document.getElementById('liveTxt').textContent=open?'Karaoke open now · till 2 AM':'Karaoke opens at 10 AM';})();
+
+// nav
+const navbar=document.getElementById('navbar');addEventListener('scroll',()=>navbar.classList.toggle('scrolled',scrollY>40),{passive:true});
+const ov=document.getElementById('overlay'),bg=document.getElementById('burger');
+bg.onclick=()=>{ov.hidden=false;bg.setAttribute('aria-expanded','true');document.getElementById('closeOv').focus()};
+const closeOv=()=>{ov.hidden=true;bg.setAttribute('aria-expanded','false');bg.focus()};
+document.getElementById('closeOv').onclick=closeOv;ov.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeOv));
+addEventListener('keydown',e=>{if(e.key==='Escape'&&!ov.hidden)closeOv()});
+
+// copy phone
+document.getElementById('copyPh').onclick=async function(){const t='+960 949 9969';try{await navigator.clipboard.writeText(t);this.textContent='Copied'}catch(e){const r=document.createRange();r.selectNodeContents(document.getElementById('ph'));const s=getSelection();s.removeAllRanges();s.addRange(r);this.textContent='Selected'}setTimeout(()=>this.textContent='Copy number',1800)};
+</script>
+</body>
+</html>
